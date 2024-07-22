@@ -102,7 +102,6 @@ echo "  Jobs and hooks have access to all the standard Buildkite environment var
 echokite "    BUILDKITE=$BUILDKITE" blue none italic
 echokite "    BUILDKITE_AGENT_ID=$BUILDKITE_AGENT_ID" blue none italic
 echokite "    BUILDKITE_AGENT_META_DATA_QUEUE=$BUILDKITE_AGENT_META_DATA_QUEUE" blue none italic
-echokite "    BUILDKITE_AGENT_META_DATA_STACK=$BUILDKITE_AGENT_META_DATA_STACK" blue none italic
 echokite "    BUILDKITE_AGENT_NAME=$BUILDKITE_AGENT_NAME" blue none italic
 echokite "    BUILDKITE_ARTIFACT_PATHS=$BUILDKITE_ARTIFACT_PATHS" blue none italic
 echokite "    BUILDKITE_BRANCH=$BUILDKITE_BRANCH" blue none italic

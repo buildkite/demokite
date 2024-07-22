@@ -1,0 +1,7 @@
+---
+name: "Onboarding adventure"
+description: "One demo to rule them all..."
+steps:
+  - label: ":feelsgood: Let's Begin"
+    key: "begin"
+    command: ".buildkite/start.sh"

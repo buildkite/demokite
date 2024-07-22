@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# set explanation: https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425
+# set -euxo pipefail # print executed commands to the terminal
+set -euo pipefail # don't print executed commands to the terminal
+
+echo -e "\033[35mrepository pre-command hook here, hi! 👋\033[0m"
+
+# # source shared functions
+# . .buildkite/assets/functions.sh;
+
+# # capture directory and contents
+# cur_dir=$(pwd)
+# cur_dir_contents=$(ls -lah $cur_dir)
+
+# # print directory and contents
+# echo ""
+# echokite "  The current job working directory is:" white none normal
+# echokite "$cur_dir" blue none italic | sed -e 's/^/    /'
+# echokite "  The contents of that directory is:" white none normal
+# echokite "$cur_dir_contents" blue none italic | sed -e 's/^/    /'
+# echo ""
+
+# function secrets() {
+# echo -e "--- :aws: \033[32mAWS\033[0m :unlock:"
+#   aws s3 cp s3://buildkite-managedsecretsbucket-h31i2hth1g44/aws_credentials.txt .aws/credentials --sse --region $AWS_REGION
+#   declare $(awk "/${AWS_ENV}/{getline; getline;print}" .aws/credentials )
+#   declare $(awk "/${AWS_ENV}/{getline;print}" .aws/credentials)
+#   export AWS_ACCESS_KEY_ID=${aws_access_key_id}
+#   export AWS_SECRET_ACCESS_KEY=${aws_secret_access_key}
+# }
+
+# main() {
+#   secrets
+#   tf_env
+# }
+
+# # Only run on pipeline upload, if using as environment hook "$BUILDKITE_PIPELINE_SLUG" is required.
+# if [[ "$BUILDKITE_STEP_KEY" != "pipeline" && "$BUILDKITE_PIPELINE_SLUG" == "terraform" ]]; then
+#   main
+# fi

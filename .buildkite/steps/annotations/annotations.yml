@@ -1,0 +1,4 @@
+---
+steps:
+  - label: ":memo: Show Annotations"
+    command: ".buildkite/steps/annotations/annotations.sh"

@@ -1,0 +1,24 @@
+---
+steps:
+  - block: ":thinking_face: What now?"
+    prompt: "Choose the next set of steps to be dynamically generated"
+    fields:
+      - select: "Choices"
+        key: "choice"
+        options:
+          - label: ":terminal: Show some cool log features"
+            value: "logs"
+          - label: ":memo: Create some annotations"
+            value: "annotations"
+          - label: ":people_holding_hands: Run some jobs in parallel"
+            value: "parallel-steps"
+          # - label: ":bird: Simulate automatic retries"
+          #   value: "retry"
+          - label: ":rocket: Monitor the progress of your deployments"
+            value: "deploy-progress"
+          - label: ":thumbsup: Pass the build"
+            value: "pass"
+          - label: ":thumbsdown: Fail the build"
+            value: "fail"
+  - label: ":robot_face: Process Input"
+    command: ".buildkite/demokite.sh"

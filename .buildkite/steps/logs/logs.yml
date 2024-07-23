@@ -1,0 +1,4 @@
+---
+steps:
+  - label: ":terminal: Show Logs"
+    command: ".buildkite/steps/logs/logs.sh"

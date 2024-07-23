@@ -1,0 +1,4 @@
+---
+steps:
+  - label: ":thumbsup: Pass Build"
+    command: "echo 'Exiting build with status 0' && exit 0"

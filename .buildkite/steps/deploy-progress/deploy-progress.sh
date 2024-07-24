@@ -289,3 +289,7 @@ update_annotation
 buildkite-agent annotate --style "success" --context "deploy-01"
 
 ls -lah ./assets/;
+
+cd ../ask;
+
+pipeline_upload "ask.yml"

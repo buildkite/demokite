@@ -43,19 +43,13 @@ if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
     pipeline_upload "merged.json"
   fi
   if [ $CURRENT_STATE = "deploy-progress" ]; then
-    pipeline_prepare ".buildkite/steps/deploy-progress" "deploy-progress.yml" $CURRENT_DIR "deploy-progress.json"
-    pipeline_prepare ".buildkite/steps/ask" "ask.yml" $CURRENT_DIR "ask.json"
-    pipeline_merge "deploy-progress.json" "ask.json" > "merged.json"
-    # artifact_upload "merged.json"
-    pipeline_upload "merged.json"
+    pipeline_upload ".buildkite/steps/deploy-progress/deploy-progress.yml"
   fi
   if [ $CURRENT_STATE = "pass" ]; then
-    pipeline_prepare ".buildkite/steps/pass" "pass.yml" $CURRENT_DIR "pass.json"
-    pipeline_upload "pass.json"
+    pipeline_upload ".buildkite/steps/pass/pass.yml"
   fi
   if [ $CURRENT_STATE = "fail" ]; then
-    pipeline_prepare ".buildkite/steps/fail" "fail.yml" $CURRENT_DIR "fail.json"
-    pipeline_upload "fail.json"
+    pipeline_upload ".buildkite/steps/fail/fail.yml"
   fi
 else
   sleep 10

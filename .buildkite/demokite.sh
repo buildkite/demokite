@@ -43,8 +43,9 @@ if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
     pipeline_upload ".buildkite/steps/parallel-steps/parallel-steps.yml"
     behind_the_scenes_annotation "$CURRENT_STATE"
   fi
-  if [ $CURRENT_STATE = "deploy-progress" ]; then
-    pipeline_upload ".buildkite/steps/deploy-progress/deploy-progress.yml"
+  if [ $CURRENT_STATE = "dynamic-annotation" ]; then
+    artifact_upload ".buildkite/assets/behind-the-scenes/excited.gif"
+    pipeline_upload ".buildkite/steps/dynamic-annotation/dynamic-annotation.yml"
     behind_the_scenes_annotation "$CURRENT_STATE"
   fi
   if [ $CURRENT_STATE = "pass" ]; then

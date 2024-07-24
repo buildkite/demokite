@@ -32,6 +32,10 @@ printf '%b\n' "$(cat $FILE_PATH)" | buildkite-agent annotate --style 'success' -
 # upload assets as artifacts
 buildkite-agent artifact upload "assets/*" --log-level error;
 
+cd ../ask;
+
+pipeline_upload "ask.yml"
+
 # if [ -f "$FILE_PATH" ]; then
 
 #   OLD_STRING="\$BUILDKITE_BUILD_URL"
@@ -43,7 +47,7 @@ buildkite-agent artifact upload "assets/*" --log-level error;
 #   NEW_STRING="$BUILDKITE_JOB_ID"
 #   sed -i "s|$OLD_STRING|$NEW_STRING|g" "$FILE_PATH"
 #   echo "Replaced $OLD_STRING with $NEW_STRING"
-  
+
 #   OLD_STRING="\$BUILDKITE_LABEL"
 #   NEW_STRING="$BUILDKITE_LABEL"
 #   sed -i "s|$OLD_STRING|$NEW_STRING|g" "$FILE_PATH"
@@ -271,11 +275,11 @@ buildkite-agent artifact upload "assets/*" --log-level error;
 # Wiz Docker Image Scan for <a href=\"artifact://wiz-docker-scan-annotation.md\">$IMAGE_NAME</a> does not meet policy requirements.
 # </summary>
 # <pre>
-#     1 
-#    / \ 
-#   2   2 
-#  / \ / \ 
-# 3  4 4  3 
+#     1
+#    / \
+#   2   2
+#  / \ / \
+# 3  4 4  3
 # </pre>
 
 #     line 1

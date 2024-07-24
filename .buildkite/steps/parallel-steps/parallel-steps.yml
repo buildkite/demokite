@@ -3,5 +3,3 @@ steps:
   - label: ":zap: Parallel Steps"
     command: ".buildkite/steps/parallel-steps/parallel-steps.sh"
     parallelism: 10
-  - label: ":mage: continue the adventure"
-    command: buildkite-agent pipeline upload ".buildkite/steps/ask/ask.yml" --log-level error

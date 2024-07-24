@@ -4,18 +4,9 @@
 # set -euxo pipefail # print executed commands to the terminal
 set -euo pipefail # don't print executed commands to the terminal
 
-pipeline_merge() {
-    jq -s '{steps: [.[].steps[]]}' "$@"
-}
-
 pipeline_upload() {
     local pipeline="$1"
     buildkite-agent pipeline upload "$pipeline" --log-level error
-}
-
-artifact_upload() {
-    local artifact="$1"
-    buildkite-agent artifact upload "$artifact" --log-level error
 }
 
 # echokite function to print text colors and styles

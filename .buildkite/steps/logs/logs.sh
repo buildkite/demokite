@@ -146,6 +146,10 @@ echokite "    CI=$CI" blue none italic
 echo ""
 echo -e "+++ :checkered_flag: $(echokite "fin" black none underline)"
 
+cd ../ask;
+
+pipeline_upload "ask.yml"
+
 # echo '--- This is a collapsed log group :white_check_mark:' && cat lorem-ipsum.txt
 # echo '~~~ This is a de-emphasized log group :no_entry:' && cat lorem-ipsum.txt
 # echo '+++ This is an expanded log group :star2:' && cat lorem-ipsum.txt

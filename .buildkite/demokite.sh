@@ -30,7 +30,7 @@ if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
     pipeline_upload ".buildkite/steps/logs/logs.yml"
   fi
   if [ $CURRENT_STATE = "annotations" ]; then
-    pipeline_upload ".buildkite/steps/annotations.yml"
+    pipeline_upload ".buildkite/steps/annotations/annotations.yml"
   fi
   if [ $CURRENT_STATE = "parallel-steps" ]; then
     pipeline_prepare ".buildkite/steps/parallel-steps" "parallel-steps.yml" $CURRENT_DIR "parallel-steps.json"

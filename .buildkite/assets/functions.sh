@@ -9,6 +9,11 @@ pipeline_upload() {
     buildkite-agent pipeline upload "$pipeline" --log-level error
 }
 
+artifact_upload() {
+    local artifact="$1"
+    buildkite-agent artifact upload "$artifact" --log-level error
+}
+
 # echokite function to print text colors and styles
 echokite () {
     local text="$1"

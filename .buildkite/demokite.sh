@@ -18,17 +18,17 @@ CURRENT_STATE=""
 FIRST_STEP_KEY="begin"
 CURRENT_DIR=$(pwd)
 
-# OLD_ANNOTATIONS=$(buildkite-agent meta-data get "annotations")
-
-# if [ $OLD_ANNOTATIONS = "static" ]; then
-#   clear_annotations "$OLD_ANNOTATIONS"
-# fi
-
-# if [ $OLD_ANNOTATIONS = "dynamic" ]; then
-#   clear_annotations "$OLD_ANNOTATIONS"
-# fi
-
 if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
+  OLD_ANNOTATIONS=$(buildkite-agent meta-data get "annotations")
+
+  if [ $OLD_ANNOTATIONS = "static" ]; then
+    clear_annotations "$OLD_ANNOTATIONS"
+  fi
+
+  if [ $OLD_ANNOTATIONS = "dynamic" ]; then
+    clear_annotations "$OLD_ANNOTATIONS"
+  fi
+
   CURRENT_STATE=$(buildkite-agent meta-data get "choice")
   echo "BUILDKITE_STEP_KEY: $BUILDKITE_STEP_KEY"
   echo "CHOICE: $CURRENT_STATE"
@@ -55,6 +55,7 @@ if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
 
   behind_the_scenes_annotation "$CURRENT_STATE"
 else
+  buildkite-agent meta-data set "annotations" "none"
   artifact_upload ".buildkite/assets/behind-the-scenes/block-step.png"
   behind_the_scenes_annotation "$FIRST_STEP_KEY"
   pipeline_upload ".buildkite/steps/ask/ask.yml"

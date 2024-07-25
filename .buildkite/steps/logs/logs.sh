@@ -146,8 +146,11 @@ echokite "    CI=$CI" blue none italic
 echo ""
 echo -e "+++ :checkered_flag: $(echokite "fin" black none underline)"
 
-cd ../ask;
+# Back to the root directory
+cd ../../../;
+behind_the_scenes_annotation "logs"
 
+cd .buildkite/steps/ask;
 pipeline_upload "ask.yml"
 
 # echo '--- This is a collapsed log group :white_check_mark:' && cat lorem-ipsum.txt

@@ -45,6 +45,7 @@ if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
 
   behind_the_scenes_annotation "$CURRENT_STATE"
 else
-  sleep 10
+  artifact_upload ".buildkite/assets/behind-the-scenes/block-step.png"
+  behind_the_scenes_annotation "$FIRST_STEP_KEY"
   pipeline_upload ".buildkite/steps/ask/ask.yml"
 fi

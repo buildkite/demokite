@@ -2,6 +2,5 @@
 name: "Onboarding adventure"
 description: "One demo to rule them all..."
 steps:
-  - label: ":feelsgood: Let's Begin"
-    key: "begin"
-    command: ".buildkite/demokite.sh"
+  - command: "buildkite-agent pipeline upload"
+    label: ":pipeline: Upload pipeline.yml"

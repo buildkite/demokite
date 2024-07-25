@@ -1,4 +1,7 @@
 steps:
   - label: ":magic_wand: Let's Begin"
     key: "begin"
-    command: ".buildkite/demokite.sh"
+    commands:
+      - buildkite-agent meta-data set "annotations" "none"
+      - ".buildkite/demokite.sh"
+

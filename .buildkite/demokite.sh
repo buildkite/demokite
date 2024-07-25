@@ -47,5 +47,5 @@ if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
 else
   artifact_upload ".buildkite/assets/behind-the-scenes/block-step.png"
   behind_the_scenes_annotation "$FIRST_STEP_KEY"
-  pipeline_upload ".buildkite/steps/intro/intro.yml"
+  pipeline_upload ".buildkite/steps/ask/ask.yml"
 fi

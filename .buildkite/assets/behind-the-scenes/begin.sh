@@ -6,7 +6,7 @@ export TITLE=":wave: Hey there!"
 
 export SUBTITLE=$(cat <<EOF
 <p>
-  :tada: Welcome to the starter pipeline :rainbow: - you just ran the first step! To continue the build, click the <strong>:thinking_face: What now?<strong/> <a target="_blank" href="https://buildkite.com/docs/pipelines/block-step">block step</a> in the build header above.
+  :tada: Welcome to the starter pipeline :rainbow: - you just ran the first step! To continue the build, click the <strong>:thinking_face: What now?</strong> <a target="_blank" href="https://buildkite.com/docs/pipelines/block-step">block step</a> in the build header above.
 </p>
 
 <img class="rounded" src="artifact://.buildkite/assets/behind-the-scenes/block-step.png" alt="block-step" width="660" />

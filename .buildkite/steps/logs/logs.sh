@@ -146,6 +146,8 @@ echokite "    CI=$CI" blue none italic
 echo ""
 echo -e "+++ :checkered_flag: $(echokite "fin" black none underline)"
 
+behind_the_scenes_annotation "logs"
+
 cd ../ask;
 
 pipeline_upload "ask.yml"

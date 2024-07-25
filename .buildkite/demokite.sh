@@ -18,15 +18,15 @@ CURRENT_STATE=""
 FIRST_STEP_KEY="begin"
 CURRENT_DIR=$(pwd)
 
-OLD_ANNOTATIONS=$(buildkite-agent meta-data get "annotations")
+# OLD_ANNOTATIONS=$(buildkite-agent meta-data get "annotations")
 
-if [ $OLD_ANNOTATIONS = "static" ]; then
-  clear_annotations "$OLD_ANNOTATIONS"
-fi
+# if [ $OLD_ANNOTATIONS = "static" ]; then
+#   clear_annotations "$OLD_ANNOTATIONS"
+# fi
 
-if [ $OLD_ANNOTATIONS = "dynamic" ]; then
-  clear_annotations "$OLD_ANNOTATIONS"
-fi
+# if [ $OLD_ANNOTATIONS = "dynamic" ]; then
+#   clear_annotations "$OLD_ANNOTATIONS"
+# fi
 
 if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
   CURRENT_STATE=$(buildkite-agent meta-data get "choice")
@@ -36,7 +36,6 @@ if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
     pipeline_upload ".buildkite/steps/logs/logs.yml"
   fi
   if [ $CURRENT_STATE = "annotations" ]; then
-    # buildkite-agent meta-data set "annotations" "true"
     pipeline_upload ".buildkite/steps/annotations/annotations.yml"
   fi
   if [ $CURRENT_STATE = "parallel-steps" ]; then

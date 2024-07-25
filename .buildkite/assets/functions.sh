@@ -83,3 +83,19 @@ behind_the_scenes_annotation() {
 
   buildkite-agent annotate --priority "$PRIORITY" --style "$STYLE" --context "$CONTEXT" "$ANNOTATION_BODY"
 }
+
+clear_annotations() {
+    local OLD_ANNOTATIONS="$1"
+    if [ $OLD_ANNOTATIONS = "static" ]; then
+        buildkite-agent annotation remove --context 'ctx-error'
+        buildkite-agent annotation remove --context 'ctx-warning'
+        buildkite-agent annotation remove --context 'ctx-default'
+        buildkite-agent annotation remove --context 'ctx-info'
+        buildkite-agent annotation remove --context 'example'
+
+        buildkite-agent meta-data set "annotations" "none"
+    fi
+    if [ $OLD_ANNOTATIONS = "dynamic" ]; then
+        buildkite-agent annotation remove --context "deploy-01"
+    fi
+}

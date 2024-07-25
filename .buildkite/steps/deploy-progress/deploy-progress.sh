@@ -290,6 +290,8 @@ buildkite-agent annotate --style "success" --context "deploy-01"
 
 ls -lah ./assets/;
 
+buildkite-agent meta-data set "annotations" "dynamic"
+
 cd ../ask;
 
 pipeline_upload "ask.yml"

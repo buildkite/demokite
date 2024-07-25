@@ -32,6 +32,8 @@ printf '%b\n' "$(cat $FILE_PATH)" | buildkite-agent annotate --style 'success' -
 # upload assets as artifacts
 buildkite-agent artifact upload "assets/*" --log-level error;
 
+buildkite-agent meta-data set "annotations" "static"
+
 cd ../ask;
 
 pipeline_upload "ask.yml"

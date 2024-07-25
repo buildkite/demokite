@@ -1,0 +1,4 @@
+steps:
+  - label: ":magic_wand: Let's Begin"
+    key: "begin"
+    command: ".buildkite/demokite.sh"

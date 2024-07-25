@@ -97,5 +97,7 @@ clear_annotations() {
     fi
     if [ $OLD_ANNOTATIONS = "dynamic" ]; then
         buildkite-agent annotation remove --context "deploy-01"
+
+        buildkite-agent meta-data set "annotations" "none"
     fi
 }

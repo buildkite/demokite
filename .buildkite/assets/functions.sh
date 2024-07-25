@@ -68,3 +68,18 @@ replace_file_var () {
         echo "Error: File does not exist."
     fi
 }
+
+# Create a new annotation
+behind_the_scenes_annotation() {
+  local CONTEXT="behind-the-scenes"
+  local STYLE="info"
+  local CHOICE="$1"
+  local ANNOTATION_VARIABLES=".buildkite/assets/behind-the-scenes/$CHOICE.sh"
+  local FILE_PATH=".buildkite/assets/behind-the-scenes/template.sh"
+  local PRIORITY="10" # Always render this annotation first
+
+  source $ANNOTATION_VARIABLES;
+  source $FILE_PATH;
+
+  buildkite-agent annotate --priority "$PRIORITY" --style "$STYLE" --context "$CONTEXT" "$ANNOTATION_BODY"
+}

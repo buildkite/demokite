@@ -80,7 +80,7 @@ link02='\033]1339;url='"https://www.buildkite.com/"';content='"links are hoverab
 link03=" in group headers 😢"
 echo -e "--- :link: $link01 $link02 $link03"
 echo ""
-printf '  \033]1339;url='"https://www.buildkite.com/"';content='"But they work fine in nested log entries. They are always be this color, and will show an underline on hover"'\a\n'
+printf '  \033]1339;url='"https://www.buildkite.com/"';content='"But they work fine in nested log entries. They will always be this color, and will show an underline on hover"'\a\n'
 printf '  \033]1339;url='"https://www.buildkite.com/"'\a\n'
 link01="We can link"
 link02='\033]1339;url='"https://www.buildkite.com/"';content='"only on certain words"'\a'

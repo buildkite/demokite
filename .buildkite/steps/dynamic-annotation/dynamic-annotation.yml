@@ -1,0 +1,4 @@
+---
+steps:
+  - label: ":rocket: Dynamic Annotation"
+    command: ".buildkite/steps/dynamic-annotation/dynamic-annotation.sh"

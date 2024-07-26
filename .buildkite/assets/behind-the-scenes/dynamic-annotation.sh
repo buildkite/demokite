@@ -3,7 +3,7 @@
 set -euo pipefail
 
 export TITLE=":rainbow: Did you know that annotations can be dynamic?"
-export SUBTITLE="<p>Check out the example below show-casing the power of Buildkite's annotations</p>"
+export SUBTITLE="<p>Check out the example below showcasing the power of Buildkite's annotations</p>"
 
 export DETAILS=$(cat <<EOF
 <p>

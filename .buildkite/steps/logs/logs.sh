@@ -130,6 +130,7 @@ echokite "    CI=$CI" blue none italic
 echo ""
 echo -e "+++ :checkered_flag: $(echokite "fin" black none underline)"
 
-cd .buildkite/steps/ask;
+cd ../../../.buildkite/steps/ask;
+
 pipeline_upload "ask.yml"
 

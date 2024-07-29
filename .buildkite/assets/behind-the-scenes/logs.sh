@@ -6,7 +6,7 @@ export TITLE=":terminal: Let's check out a job log"
 
 export SUBTITLE=$(cat <<EOF
 <p>
-  Scroll down or <a href="$BUILDKITE_BUILD_URL#$BUILDKITE_JOB_ID">click here</a>
+  Scroll down and click the <strong>:terminal: Show Logs</strong> <a href="$BUILDKITE_BUILD_URL#$BUILDKITE_JOB_ID">job row</a>
   to explore the log for the job that just ran.
 </p>
 EOF

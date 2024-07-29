@@ -1,0 +1,4 @@
+---
+steps:
+  - label: ":gift: Download an artifact"
+    command: ".buildkite/steps/artifact/artifact.sh"

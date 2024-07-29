@@ -39,6 +39,11 @@ if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
     pipeline_upload ".buildkite/steps/annotations/annotations.yml"
     behind_the_scenes_annotation "$CURRENT_STATE"
   fi
+    if [ $CURRENT_STATE = "artifact" ]; then
+    artifact_upload ".buildkite/assets/rick.gif"
+    pipeline_upload ".buildkite/steps/artifact/artifact.yml"
+    behind_the_scenes_annotation "$CURRENT_STATE"
+  fi
   if [ $CURRENT_STATE = "parallel-steps" ]; then
     pipeline_upload ".buildkite/steps/parallel-steps/parallel-steps.yml"
     behind_the_scenes_annotation "$CURRENT_STATE"

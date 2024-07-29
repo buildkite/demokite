@@ -12,7 +12,7 @@ current_dir=$(pwd)
 current_dir_contents=$(ls -lah $current_dir)
 
 # download artifact
-buildkite-agent artifact download ".buildkite/assets/rick.gif"
+buildkite-agent artifact download ".buildkite/assets/rick.gif" .
 
 cd .buildkite/steps/ask;
 pipeline_upload "ask.yml"

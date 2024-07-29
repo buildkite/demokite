@@ -37,16 +37,13 @@ if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
   fi
   if [ $CURRENT_STATE = "annotations" ]; then
     pipeline_upload ".buildkite/steps/annotations/annotations.yml"
-    behind_the_scenes_annotation "$CURRENT_STATE"
   fi
   if [ $CURRENT_STATE = "parallel-steps" ]; then
     pipeline_upload ".buildkite/steps/parallel-steps/parallel-steps.yml"
-    behind_the_scenes_annotation "$CURRENT_STATE"
   fi
   if [ $CURRENT_STATE = "dynamic-annotation" ]; then
     artifact_upload ".buildkite/assets/behind-the-scenes/excited.gif"
     pipeline_upload ".buildkite/steps/dynamic-annotation/dynamic-annotation.yml"
-    behind_the_scenes_annotation "$CURRENT_STATE"
   fi
   if [ $CURRENT_STATE = "pass" ]; then
     artifact_upload ".buildkite/assets/behind-the-scenes/rebuild-button.png"

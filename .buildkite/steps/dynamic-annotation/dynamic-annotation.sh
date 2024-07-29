@@ -7,6 +7,9 @@ set -xeuo pipefail # don't print executed commands to the terminal
 # source shared functions
 source .buildkite/assets/functions.sh;
 
+# upload behind the scenes annotation
+behind_the_scenes_annotation "dynamic-annotation"
+
 # change into steps/dynamic-annotation/ directory
 cd .buildkite/steps/dynamic-annotation/;
 

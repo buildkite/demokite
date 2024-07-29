@@ -9,6 +9,9 @@ set -euo pipefail # don't print executed commands to the terminal
 current_dir=$(pwd)
 current_dir_contents=$(ls -lah $current_dir)
 
+# upload behind the scenes annotation
+behind_the_scenes_annotation "logs"
+
 # change into steps/logs/ directory
 cd .buildkite/steps/logs/;
 
@@ -126,10 +129,6 @@ echokite "    BUILDKITE_TRIGGERED_FROM_BUILD_PIPELINE_SLUG=$BUILDKITE_TRIGGERED_
 echokite "    CI=$CI" blue none italic
 echo ""
 echo -e "+++ :checkered_flag: $(echokite "fin" black none underline)"
-
-# Back to the root directory
-cd ../../../;
-behind_the_scenes_annotation "logs"
 
 cd .buildkite/steps/ask;
 pipeline_upload "ask.yml"

@@ -12,7 +12,7 @@ current_dir=$(pwd)
 current_dir_contents=$(ls -lah $current_dir)
 
 # upload behind the scenes annotation
-behind_the_scenes_annotation "logs"
+behind_the_scenes_annotation "parallel-steps"
 
 # change into steps/parallel-steps/ directory
 cd .buildkite/steps/parallel-steps/;

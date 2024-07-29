@@ -3,7 +3,7 @@
 set -euo pipefail
 
 export TITLE=":rainbow: Did you know that annotations can be dynamic?"
-export SUBTITLE="<p>Check out the example below showcasing the power of Buildkite's annotations</p>"
+export SUBTITLE="<p>Annotations can be dynamically updated during a build - this can be useful for things like test reporting, or monitoring deploys.</p>"
 
 export DETAILS=$(cat <<EOF
 <p>
@@ -17,7 +17,7 @@ export DETAILS=$(cat <<EOF
   The <strong>:robot_face: Process Input</strong> step read the meta-data using a <code>buildkite-agent meta-data get "choice"</code>
   command, and determined that because the selected option value was <code>"dynamic-annotation"</code> that it should run a file called <code>dynamic-annotation.sh</code>.
 
-  In <code>annotations.sh</code>, we used the <code>buildkite-agent annotate</code> <a target="_blank" href="https://buildkite.com/docs/agent/v3/cli-annotate">CLI command</a> to generate the annotation, and the <code>--context deploy-01</code> flag to update the annotation in place.
+  In <code>dynamic-annotation.sh</code>, we used the <code>buildkite-agent annotate</code> <a target="_blank" href="https://buildkite.com/docs/agent/v3/cli-annotate">CLI command</a> to generate the annotation, and the <code>--context deploy-01</code> flag to update the annotation in place.
 </p>
 EOF
 )

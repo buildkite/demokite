@@ -12,7 +12,7 @@ steps:
             value: "annotations"
           - label: ":people_holding_hands: Run some jobs in parallel"
             value: "parallel-steps"
-          - label: ":bird: Retry some jobs"
+          - label: ":bird: Automatically retry a failed job"
             value: "retry"
           - label: ":rocket: Show an annotation updating dynamically"
             value: "dynamic-annotation"

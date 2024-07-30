@@ -13,5 +13,5 @@ else
   echo 'Yay, the job retried automatically!'
 fi
 
-pipeline_upload "ask.yml"
+what_next
 

@@ -37,7 +37,8 @@ buildkite-agent artifact upload "assets/*" --log-level error;
 
 buildkite-agent meta-data set "annotations" "static"
 
-cd ../ask;
+# return to root directory
+cd ../../..;
 
-pipeline_upload "ask.yml"
+what_next
 

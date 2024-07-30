@@ -63,5 +63,5 @@ else
   buildkite-agent meta-data set "annotations" "none"
   artifact_upload ".buildkite/assets/behind-the-scenes/block-step.png"
   behind_the_scenes_annotation "$FIRST_STEP_KEY"
-  pipeline_upload ".buildkite/steps/ask/ask.yml"
+  what_next
 fi

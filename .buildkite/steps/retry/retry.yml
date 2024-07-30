@@ -1,9 +1,7 @@
 ---
 steps:
   - label: ":bird: Automatic Retry"
-    command: "exit $((RANDOM % 2))"
-    parallelism: 5
+    command: ".buildkite/steps/retry/retry.sh"
     retry:
       automatic:
-        - exit_status: 1
-          limit: 3
+          - limit: 2

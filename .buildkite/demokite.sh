@@ -45,6 +45,10 @@ if [ "$BUILDKITE_STEP_KEY" != "$FIRST_STEP_KEY" ]; then
     artifact_upload ".buildkite/assets/behind-the-scenes/excited.gif"
     pipeline_upload ".buildkite/steps/dynamic-annotation/dynamic-annotation.yml"
   fi
+  if [ $CURRENT_STATE = "retry" ]; then
+    behind_the_scenes_annotation "$CURRENT_STATE"
+    pipeline_upload ".buildkite/steps/retry/retry.yml"
+  fi
   if [ $CURRENT_STATE = "pass" ]; then
     artifact_upload ".buildkite/assets/behind-the-scenes/rebuild-button.png"
     pipeline_upload ".buildkite/steps/pass/pass.yml"

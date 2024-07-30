@@ -1,6 +1,8 @@
 ---
 name: "Onboarding adventure"
 description: "One demo to rule them all..."
+emoji: ":mage:"
+tags: ["Example"]
 steps:
   - command: "buildkite-agent pipeline upload"
     label: ":pipeline: Upload pipeline.yml"

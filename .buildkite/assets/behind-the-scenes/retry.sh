@@ -2,8 +2,13 @@
 
 set -euo pipefail
 
-export TITLE=":hammer: Let's retry some jobs!"
-export SUBTITLE="This step is configured to retry automatically if the job fails."
+export TITLE=":hammer: Let's monitor some job retries..."
+export SUBTITLE=$(cat <<EOF
+<p>
+  The <strong>:bird: Automatic Retry</strong> step is configured to retry automatically on failure.
+</p>
+EOF
+)
 
 export DETAILS=$(cat <<EOF
 <p>
@@ -22,7 +27,7 @@ export DETAILS=$(cat <<EOF
 ---
 steps:
   - label: ":bird: Automatic Retry"
-    command: "if (($BUILDKITE_RETRY_COUNT > 0)); then echo pass; exit 0; else echo fail; exit 1; fi;"
+    command: ".buildkite/steps/retry/retry.sh"
     retry:
       automatic:
           - limit: 2

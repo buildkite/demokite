@@ -21,7 +21,7 @@ export DETAILS=$(cat <<EOF
   <code>
 ---
 steps:
-  - label: ":zap: Parallel Steps"
+  - label: ":zap: Parallel Jobs"
     command: ".buildkite/steps/parallel-steps/parallel-steps.sh"
     parallelism: 10
   </code>

@@ -20,9 +20,9 @@ cd .buildkite/steps/annotations/;
 # replace variables in annotation file
 FILE_PATH="./assets/example01.md"
 
-replace_file_var $FILE_PATH "\$BUILDKITE_BUILD_URL" "$BUILDKITE_BUILD_URL"
-replace_file_var $FILE_PATH "\$BUILDKITE_JOB_ID" "$BUILDKITE_JOB_ID"
-replace_file_var $FILE_PATH "\$BUILDKITE_LABEL" "$BUILDKITE_LABEL"
+# replace_file_var $FILE_PATH "\$BUILDKITE_BUILD_URL" "$BUILDKITE_BUILD_URL"
+# replace_file_var $FILE_PATH "\$BUILDKITE_JOB_ID" "$BUILDKITE_JOB_ID"
+# replace_file_var $FILE_PATH "\$BUILDKITE_LABEL" "$BUILDKITE_LABEL"
 
 # annotate
 buildkite-agent annotate 'Example `error` style annotation' --style 'error' --context 'ctx-error'

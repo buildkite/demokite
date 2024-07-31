@@ -60,21 +60,6 @@ echokite () {
     [ $bg_color == "green" ] && ansi_bg_color="42"
 
     echo -e "\033[${ansi_style};${ansi_fg_color};${ansi_bg_color}m${ansi_text}\033[0m"
-    # echo -e "\033[${ansi_style};${ansi_fg_color};${ansi_bg_color}m${ansi_text}\033[0m" | sed -e '/^---\s\|^+++\s\|^~~~\s/!s/^/  /'
-}
-
-# replace_file_var function to replace variables in a file
-replace_file_var () {
-    local FILE_PATH="$1"
-    local OLD_STRING="$2"
-    local NEW_STRING="$3"
-
-    if [ -f "$FILE_PATH" ]; then
-        sed -i "s|$OLD_STRING|$NEW_STRING|g" "$FILE_PATH"
-        echo "Replaced $OLD_STRING with $NEW_STRING"
-    else
-        echo "Error: File does not exist."
-    fi
 }
 
 # Create a new annotation

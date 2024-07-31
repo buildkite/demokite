@@ -93,5 +93,7 @@ update-annotation;
 
 buildkite-agent meta-data set "annotations" "dynamic"
 
-cd ../ask;
-pipeline_upload "ask.yml"
+# return to root directory
+cd ../../..;
+
+what_next

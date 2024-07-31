@@ -22,6 +22,8 @@ echo -e "\033[1;35mThis is parallel job $((BUILDKITE_PARALLEL_JOB+1)) of $BUILDK
 sleep $RANDOM_DURATION
 
 if [ $((BUILDKITE_PARALLEL_JOB+1)) -eq $BUILDKITE_PARALLEL_JOB_COUNT ]; then
-  cd ../ask;
-  pipeline_upload "ask.yml";
+  # return to root directory
+  cd ../../..;
+
+  what_next
 fi

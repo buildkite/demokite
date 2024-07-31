@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# set explanation: https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425
-# set -euxo pipefail # print executed commands to the terminal
 set -euo pipefail # don't print executed commands to the terminal
 
 # source shared functions
@@ -10,6 +8,9 @@ set -euo pipefail # don't print executed commands to the terminal
 # capture original working directory
 current_dir=$(pwd)
 current_dir_contents=$(ls -lah $current_dir)
+
+# upload behind the scenes annotation
+behind_the_scenes_annotation "logs"
 
 # change into steps/logs/ directory
 cd .buildkite/steps/logs/;
@@ -70,23 +71,6 @@ echo -e "--- :partyparrot: $(echokite "Of course we support Buildkite emojis" br
 echo ""
 echo -e "  You can also use unicode emojis within log groups (nested)! 😎 🥱 🐱 🦃 🥙 🍪 🥬 🌷 🛴 🧭 🏰 ⛄"
 echo ""
-# comment/uncomment this section as required
-echo -e "  But Buildkite emojis only display in log group headers 😢: :perfection: :bash: :sadpanda: :docker: :metal: :red_button: :terminal: :speech_balloon: :ghost: :brain: :mage: :juggling:"
-echo ""
-
-# comment/uncomment this section as required
-link01="Unfortunately, "
-link02='\033]1339;url='"https://www.buildkite.com/"';content='"links are hoverable, but not clickable"'\a'
-link03=" in group headers 😢"
-echo -e "--- :link: $link01 $link02 $link03"
-echo ""
-printf '  \033]1339;url='"https://www.buildkite.com/"';content='"But they work fine in nested log entries. They will always be this color, and will show an underline on hover"'\a\n'
-printf '  \033]1339;url='"https://www.buildkite.com/"'\a\n'
-link01="We can link"
-link02='\033]1339;url='"https://www.buildkite.com/"';content='"only on certain words"'\a'
-link03="in a line of text"
-echo -e "  $link01 $link02 $link03"
-echo ""
 
 echo -e "--- :nail_care: And then there's everything else..."
 echo ""
@@ -146,30 +130,7 @@ echokite "    CI=$CI" blue none italic
 echo ""
 echo -e "+++ :checkered_flag: $(echokite "fin" black none underline)"
 
-# Back to the root directory
-cd ../../../;
-behind_the_scenes_annotation "logs"
+cd ../../../.buildkite/steps/ask;
 
-cd .buildkite/steps/ask;
 pipeline_upload "ask.yml"
 
-# echo '--- This is a collapsed log group :white_check_mark:' && cat lorem-ipsum.txt
-# echo '~~~ This is a de-emphasized log group :no_entry:' && cat lorem-ipsum.txt
-# echo '+++ This is an expanded log group :star2:' && cat lorem-ipsum.txt
-
-# https://buildkite.com/docs/pipelines/managing-log-output#redacted-environment-variables
-# These variables should be redacted from logs....
-
-# MY_PASSWORD="ThisIsASecret"
-# MY_SECRET="ThisIsASecret"
-# MY_TOKEN="ThisIsASecret"
-# MY_ACCESS_KEY="ThisIsASecret"
-# MY_SECRET_KEY="ThisIsASecret"
-# MY_CONNECTION_STRING="ThisIsASecret" # (added in Agent v3.53.0)
-
-# echo "MY_PASSWORD=$MY_PASSWORD"
-# echo "MY_SECRET=$MY_SECRET"
-# echo "MY_TOKEN=$MY_TOKEN"
-# echo "MY_ACCESS_KEY=$MY_ACCESS_KEY"
-# echo "MY_SECRET_KEY=$MY_SECRET_KEY"
-# echo "MY_CONNECTION_STRING=$MY_CONNECTION_STRING"

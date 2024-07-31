@@ -7,6 +7,9 @@ set -xeuo pipefail # don't print executed commands to the terminal
 # source shared functions
 source .buildkite/assets/functions.sh;
 
+# upload behind the scenes annotation
+behind_the_scenes_annotation "dynamic-annotation"
+
 # change into steps/dynamic-annotation/ directory
 cd .buildkite/steps/dynamic-annotation/;
 
@@ -14,7 +17,7 @@ ANNOTATION_CONTEXT="deploy-01"
 CONTENT=""
 
 ANNOTATION_STYLE="info"
-ANNOTATION_TITLE="This is an example of a dynamically updating annotation"
+ANNOTATION_TITLE="I'm a dynamically updating annotation!"
 ANNOTATION_STATUS=":bk-status-running: In Progress"
 ANNOTATION_PROGRESS=""
 ANNOTATION_BODY="<div></div>"

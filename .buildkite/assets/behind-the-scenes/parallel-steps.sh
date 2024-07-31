@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-export TITLE=":zap: Did you know that steps can be run in parallel?"
-export SUBTITLE="<p>Check out the example below showcasing the power of Buildkite's parallelism</p>"
+export TITLE=":zap: You ran some jobs in parallel!"
+export SUBTITLE="<code>Parallelism</code> is an attribute on a single command step which causes it to be split into many jobs."
 
 export DETAILS=$(cat <<EOF
 <p>
@@ -21,13 +21,13 @@ export DETAILS=$(cat <<EOF
   <code>
 ---
 steps:
-  - label: ":zap: Parallel Steps"
+  - label: ":zap: Parallel Jobs"
     command: ".buildkite/steps/parallel-steps/parallel-steps.sh"
     parallelism: 10
   </code>
 </pre>
 <p>
-  You'll notice the <code>parallelism: 10</code> automatically created 10 steps that will each run a file called <code>.buildkite/steps/parallel-steps/parallel-steps.sh</code>. This bash script runs a sleep command for a random interval of seconds to demonstrate that these steps are running concurrently at finishing at different times.
+  You'll notice the <code>parallelism: 10</code> automatically created 10 steps that will each run a file called <code>.buildkite/steps/parallel-steps/parallel-steps.sh</code>. This bash script runs a sleep command for a random interval of seconds to demonstrate that these steps are running concurrently and finishing at different times.
 </p>
 EOF
 )

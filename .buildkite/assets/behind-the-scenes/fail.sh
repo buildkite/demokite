@@ -14,7 +14,7 @@ EOF
 export DETAILS=$(cat <<EOF
 <p>
   You selected the <strong>:thumbsup: Pass the build</strong> option in the
-  <strong>:thinking_face: What now?<strong/> block step.
+  <strong>:thinking_face: What now?</strong> block step.
 
   This set build <a target="_blank" href="https://buildkite.com/docs/agent/v3/cli-meta-data">meta-data</a>
   (specifically, a key called <code>"choice"</code> with a value of <code>"fail"</code>) about what you would

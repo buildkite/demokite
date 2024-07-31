@@ -9,6 +9,14 @@ pipeline_upload() {
     buildkite-agent pipeline upload "$pipeline" --log-level error
 }
 
+what_next() {
+    if [ $BUILDKITE_COMPUTE_TYPE = "hosted" ]; then
+        pipeline_upload ".buildkite/steps/ask/hosted.yml"
+    else
+        pipeline_upload ".buildkite/steps/ask/self-hosted.yml"
+    fi
+}
+
 artifact_upload() {
     local artifact="$1"
     buildkite-agent artifact upload "$artifact" --log-level error

@@ -6,8 +6,8 @@ export TITLE=":wave: Hey there!"
 
 export SUBTITLE=$(cat <<EOF
 <p>
-  :tada: Welcome to your starter build, powered by the magic of <a target="_blank" href="https://buildkite.com/docs/pipelines/defining-steps#dynamic-pipelines>dynamic pipelines</a! :rainbow:
-  The build is currently in a <a>blocked</a> state, and needs your input to continue.
+  :tada: Welcome to your starter build, powered by the magic of <a target="_blank" href="https://buildkite.com/docs/pipelines/defining-steps#dynamic-pipelines>dynamic pipelines</a>! :rainbow:
+  The build is currently in a <em>blocked</em> state, and needs your input to continue.
   Click the <strong>:thinking_face: What now?</strong> <a target="_blank" href="https://buildkite.com/docs/pipelines/block-step">block step</a> in the build header above to get started:
 </p>
 

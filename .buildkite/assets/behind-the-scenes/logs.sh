@@ -13,14 +13,19 @@ EOF
 )
 
 export DETAILS=$(cat <<EOF
-<p>
-  You selected the <strong>:terminal: Show some cool log features</strong> option in the <strong>:thinking_face: What now?</strong/> block step.
-
-  This set build <a target="_blank" href="https://buildkite.com/docs/agent/v3/cli-meta-data">meta-data</a> (specifically, a key called <code>"choice"</code> with a value of <code>"logs"</code>) about what you would like to do next.
-
-  The <strong>:robot_face: Process Input</strong> step read the meta-data using a <code>buildkite-agent meta-data get "choice"</code> command, and determined that because the selected option value was <code>"logs"</code> that it should run a file called <code>logs.sh</code>.
-
-  In <code>logs.sh</code>, we used a <code>bash</code> script to print a bunch of information to the job log!
-</p>
+<ul>
+  <li>
+    You selected the <strong>:terminal: Show some cool log features</strong> option in the <strong>:thinking_face: What now?</strong/> block step.
+  </li>
+  <li>
+    This set build <a target="_blank" href="https://buildkite.com/docs/agent/v3/cli-meta-data">meta-data</a> (specifically, a key called <code>"choice"</code>) with a value of <code>"logs"</code> about what you would like to do next.
+  </li>
+  <li>
+    The <strong>:robot_face: Process Input</strong> step read the meta-data using the <code>buildkite-agent meta-data get "choice"</code> command, and determined that it should run a file called <code>logs.sh</code>.
+  </li>
+  <li>
+    In <code>logs.sh</code>, we used a <code>bash</code> script to print a bunch of information to the job log!
+  </li>
+</ul>
 EOF
 )

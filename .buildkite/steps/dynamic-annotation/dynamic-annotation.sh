@@ -13,7 +13,7 @@ behind_the_scenes_annotation "dynamic-annotation"
 # change into steps/dynamic-annotation/ directory
 cd .buildkite/steps/dynamic-annotation/;
 
-ANNOTATION_CONTEXT="deploy-01"
+ANNOTATION_CONTEXT="dynamic"
 CONTENT=""
 
 ANNOTATION_STYLE="info"
